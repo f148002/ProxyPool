@@ -25,7 +25,8 @@ class RedisClient(object):
         :param port: redis port
         :param password: redis password
         """
-        self.db = redis.StrictRedis(host=host, port=port, password=password, decode_responses=True, **kwargs)
+        # self.db = redis.StrictRedis(host=host, port=port, password=password, decode_responses=True, **kwargs)
+        self.db = redis.StrictRedis(host='192.168.2.88', port=22770, password=password, decode_responses=True, **kwargs)
     
     def add(self, proxy: Proxy, score=PROXY_SCORE_INIT) -> int:
         """
